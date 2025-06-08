@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Server Error - StreamArtSEO</title>
+  <meta name="description" content="We're experiencing some technical difficulties. Please try again later.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+  
+  <!-- Critical CSS inline -->
+  <style>
+    :root {
+      --primary-color: #4a86e8;
+      --secondary-color: #6c5ce7;
+      --accent-color: #00b894;
+      --text-color: #333;
+      --light-text: #666;
+      --lighter-text: #999;
+      --background-color: #fff;
+      --light-background: #f8f9fa;
+      --border-color: #e1e4e8;
+      --error-color: #e74c3c;
+      --success-color: #2ecc71;
+      --warning-color: #f39c12;
+      --info-color: #3498db;
+      --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #f0f0f0;
+        --light-text: #ccc;
+        --lighter-text: #999;
+        --background-color: #121212;
+        --light-background: #1e1e1e;
+        --border-color: #333;
+      }
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-main);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    main {
+      flex: 1;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .error-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: var(--light-background);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .error-code {
+      font-size: 120px;
+      font-weight: bold;
+      color: var(--error-color);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    
+    .error-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+    
+    .error-message {
+      font-size: 18px;
+      color: var(--light-text);
+      margin-bottom: 30px;
+    }
+    
+    .error-icon {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 30px;
+      color: var(--error-color);
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px 20px 10px;
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .status-container {
+      margin-top: 30px;
+      padding: 15px;
+      border-radius: var(--border-radius);
+      background-color: var(--background-color);
+      border: 1px solid var(--border-color);
+      display: none;
+    }
+    
+    .status-container.visible {
+      display: block;
+    }
+    
+    .status-message {
+      font-size: 16px;
+      color: var(--text-color);
+      margin-bottom: 10px;
+    }
+    
+    .status-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(74, 134, 232, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .contact-info {
+      margin-top: 30px;
+      font-size: 16px;
+      color: var(--light-text);
+    }
+    
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      padding: 20px 0;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 14px;
+      color: var(--lighter-text);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+      
+      .status-spinner {
+        animation: none !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 80px;
+      }
+      
+      .error-title {
+        font-size: 24px;
+      }
+      
+      .error-message {
+        font-size: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .error-container {
+        padding: 30px 15px;
+      }
+      
+      .error-code {
+        font-size: 60px;
+      }
+      
+      .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 200px;
+      }
+    }
+  </style>
+  
+  <!-- Non-critical CSS -->
+  <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
+  
+  <!-- Preconnect to important domains -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/images/logo.svg" alt="StreamArtSEO Logo" width="40" height="40">
+        StreamArtSEO
+      </a>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <div class="error-container">
+        <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <div class="error-code">500</div>
+        <h1 class="error-title">Server Error</h1>
+        <p class="error-message">We're experiencing some technical difficulties. Our team has been notified and is working to fix the issue.</p>
+        
+        <a href="/" class="btn">Back to Home</a>
+        <button id="retry-button" class="btn btn-outline">Try Again</button>
+        
+        <div id="status-container" class="status-container">
+          <p class="status-message">
+            <span id="status-spinner" class="status-spinner"></span>
+            <span id="status-text">Checking server status...</span>
+          </p>
+        </div>
+        
+        <div class="contact-info">
+          <p>If the problem persists, please contact us at <a href="mailto:support@streamartseo.com">support@streamartseo.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StreamArtSEO. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Simple script to handle the retry button
+    document.getElementById('retry-button').addEventListener('click', function() {
+      const statusContainer = document.getElementById('status-container');
+      const statusText = document.getElementById('status-text');
+      
+      // Show status container
+      statusContainer.classList.add('visible');
+      
+      // Update status text
+      statusText.textContent = 'Checking server status...';
+      
+      // Simulate checking server status
+      setTimeout(function() {
+        statusText.textContent = 'Attempting to reconnect...';
+        
+        // Simulate reconnection attempt
+        setTimeout(function() {
+          // Reload the page
+          window.location.reload();
+        }, 1500);
+      }, 1500);
+    });
+    
+    // Track 500 errors in analytics
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        'event_category': 'error',
+        'event_label': '500: ' + window.location.pathname + window.location.search
+      });
+    }
+    
+    // Send error to Sentry if available
+    if (typeof Sentry !== 'undefined' && Sentry.captureMessage) {
+      Sentry.captureMessage('500 error page viewed', {
+        level: 'error',
+        tags: {
+          url: window.location.href
+        }
+      });
+    }
+  </script>
+</body>
+</html>

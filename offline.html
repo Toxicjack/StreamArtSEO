@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Offline - StreamArtSEO</title>
+  <style>
+    :root {
+      --primary-color: #4a6bff;
+      --text-color: #333;
+      --background-color: #f9f9f9;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .offline-icon {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #3a5bef;
+    }
+    
+    .cached-pages {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    .cached-pages h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .cached-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .cached-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cached-links a:hover {
+      background-color: rgba(74, 107, 255, 0.1);
+    }
+    
+    footer {
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      font-size: 0.9rem;
+    }
+    
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #f1f1f1;
+        --background-color: #121212;
+      }
+      
+      .cached-links a {
+        border-color: var(--primary-color);
+      }
+      
+      .cached-links a:hover {
+        background-color: rgba(74, 107, 255, 0.2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">StreamArtSEO</div>
+    
+    <svg class="offline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4a6bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="1" y1="1" x2="23" y2="23"></line>
+      <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+      <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+      <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+      <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+      <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+      <line x1="12" y1="20" x2="12.01" y2="20"></line>
+    </svg>
+    
+    <h1>You're Offline</h1>
+    <p>It looks like you've lost your internet connection. Don't worry, you can still access previously visited pages that have been cached.</p>
+    
+    <button class="btn" id="retry-button">Retry Connection</button>
+    
+    <div class="cached-pages">
+      <h2>Available Offline Pages</h2>
+      <p>These pages have been cached and are available even while you're offline:</p>
+      <div class="cached-links" id="cached-links">
+        <a href="/">Home</a>
+        <!-- Other cached links will be dynamically added by JavaScript -->
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 StreamArtSEO. All rights reserved. v0.0.1</p>
+  </footer>
+  
+  <script>
+    // Check if the user is back online
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+    
+    // Retry button functionality
+    document.getElementById('retry-button').addEventListener('click', () => {
+      window.location.reload();
+    });
+    
+    // Dynamically list cached pages if Service Worker and Cache API are available
+    if ('serviceWorker' in navigator && 'caches' in window) {
+      // Wait for the page to load
+      window.addEventListener('load', () => {
+        // Get the cached links container
+        const cachedLinksContainer = document.getElementById('cached-links');
+        
+        // Get all caches
+        caches.keys().then(cacheNames => {
+          // For each cache
+          cacheNames.forEach(cacheName => {
+            // Open the cache
+            caches.open(cacheName).then(cache => {
+              // Get all cached requests
+              cache.keys().then(requests => {
+                // Create a Set to store unique URLs
+                const uniqueUrls = new Set();
+                
+                // For each request
+                requests.forEach(request => {
+                  const url = new URL(request.url);
+                  
+                  // Only include same-origin HTML pages
+                  if (url.origin === location.origin && !url.pathname.includes('.')) {
+                    // Skip the offline page itself
+                    if (url.pathname !== '/offline.html') {
+                      uniqueUrls.add(url.pathname);
+                    }
+                  }
+                });
+                
+                // Convert paths to more readable names and create links
+                uniqueUrls.forEach(path => {
+                  // Skip the home page as it's already included
+                  if (path === '/' || path === '/index.html') {
+                    return;
+                  }
+                  
+                  // Create a readable name from the path
+                  let name = path.replace(/\//g, '').replace(/\-/g, ' ');
+                  if (name === '') name = 'Home';
+                  else name = name.charAt(0).toUpperCase() + name.slice(1);
+                  
+                  // Create the link element
+                  const link = document.createElement('a');
+                  link.href = path;
+                  link.textContent = name;
+                  
+                  // Add the link to the container
+                  cachedLinksContainer.appendChild(link);
+                });
+              });
+            });
+          });
+        });
+      });
+    }
+  </script>
+</body>
+</html>

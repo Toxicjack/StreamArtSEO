@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>StreamArtSEO - Integrate Your Content Across Platforms</title>
+  <meta name="description" content="Showcase and integrate your YouTube, DeviantArt, Twitch, and Reddit content with optimized SEO and performance.">
+  <meta name="keywords" content="content creator, YouTube, DeviantArt, Twitch, Reddit, SEO, content integration">
+  <link rel="canonical" href="https://streamartseo.com">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://streamartseo.com">
+  <meta property="og:title" content="StreamArtSEO - Integrate Your Content Across Platforms">
+  <meta property="og:description" content="Showcase and integrate your YouTube, DeviantArt, Twitch, and Reddit content with optimized SEO and performance.">
+  <meta property="og:image" content="https://streamartseo.com/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://streamartseo.com">
+  <meta property="twitter:title" content="StreamArtSEO - Integrate Your Content Across Platforms">
+  <meta property="twitter:description" content="Showcase and integrate your YouTube, DeviantArt, Twitch, and Reddit content with optimized SEO and performance.">
+  <meta property="twitter:image" content="https://streamartseo.com/images/twitter-image.jpg">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="/css/critical.css" as="style">
+  <link rel="preload" href="/js/main.js" as="script">
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    /* Critical CSS will be inlined here during build process */
+    :root {
+      --primary-color: #4a6bff;
+      --secondary-color: #ff4a6b;
+      --text-color: #333;
+      --background-color: #f9f9f9;
+      --accent-color: #6bff4a;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .hero {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: #3a5bef;
+    }
+    
+    .platform-section {
+      padding: 3rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .platform-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .platform-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .platform-card-content {
+      padding: 1.5rem;
+    }
+    
+    .platform-card h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-column h4 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #555;
+    }
+    
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  
+  <!-- Non-critical CSS -->
+  <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "StreamArtSEO",
+      "url": "https://streamartseo.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://streamartseo.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "Integrate and showcase your content across YouTube, DeviantArt, Twitch, and Reddit with optimized SEO."
+    }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://streamartseo.com"
+      }]
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">StreamArtSEO</div>
+        <div class="nav-links">
+          <a href="/" aria-current="page">Home</a>
+          <a href="/videos">Videos</a>
+          <a href="/art">Art</a>
+          <a href="/streams">Streams</a>
+          <a href="/posts">Posts</a>
+          <a href="/dashboard">Dashboard</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Integrate Your Content Across Platforms</h1>
+        <p>Showcase your YouTube videos, DeviantArt creations, Twitch streams, and Reddit posts in one place with optimized SEO.</p>
+        <a href="/dashboard" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <section class="platform-section">
+      <div class="container">
+        <h2 class="section-title">Your Content Platforms</h2>
+        <div class="platform-grid">
+          <div class="platform-card">
+            <img src="/images/youtube-placeholder.jpg" alt="YouTube Content" class="lazyload" data-src="/images/youtube.jpg">
+            <div class="platform-card-content">
+              <h3>YouTube</h3>
+              <p>Showcase your latest videos, playlists, and channel highlights with optimized metadata.</p>
+              <a href="/videos" class="btn">View Videos</a>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <img src="/images/deviantart-placeholder.jpg" alt="DeviantArt Content" class="lazyload" data-src="/images/deviantart.jpg">
+            <div class="platform-card-content">
+              <h3>DeviantArt</h3>
+              <p>Display your artwork gallery and spotlight featured pieces with enhanced visibility.</p>
+              <a href="/art" class="btn">View Art</a>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <img src="/images/twitch-placeholder.jpg" alt="Twitch Content" class="lazyload" data-src="/images/twitch.jpg">
+            <div class="platform-card-content">
+              <h3>Twitch</h3>
+              <p>Show live stream status and past broadcast highlights with interactive elements.</p>
+              <a href="/streams" class="btn">View Streams</a>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <img src="/images/reddit-placeholder.jpg" alt="Reddit Content" class="lazyload" data-src="/images/reddit.jpg">
+            <div class="platform-card-content">
+              <h3>Reddit</h3>
+              <p>Curate your subreddit activity and keyword-filtered highlights for your audience.</p>
+              <a href="/posts" class="btn">View Posts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">Powerful Features</h2>
+        <div class="platform-grid">
+          <div class="platform-card">
+            <div class="platform-card-content">
+              <h3>Advanced SEO</h3>
+              <p>Optimize your content with JSON-LD schema.org, Open Graph tags, and dynamic sitemaps.</p>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-card-content">
+              <h3>Performance Optimized</h3>
+              <p>Enjoy fast loading times with HTTP/2, Brotli compression, and edge caching.</p>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-card-content">
+              <h3>Image Intelligence</h3>
+              <p>Auto-pull high-res thumbnails with smart cropping and AI-generated alt text.</p>
+            </div>
+          </div>
+          
+          <div class="platform-card">
+            <div class="platform-card-content">
+              <h3>Accessibility First</h3>
+              <p>WCAG 2.2 AA compliant with keyboard navigation and reduced-motion support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>StreamArtSEO</h4>
+          <p>Integrate and showcase your content across platforms with optimized SEO and performance.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/art">Art</a></li>
+            <li><a href="/streams">Streams</a></li>
+            <li><a href="/posts">Posts</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/api">API</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 StreamArtSEO. All rights reserved. v0.0.1</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Deferred JavaScript -->
+  <script src="/js/main.js" defer></script>
+  <script src="/js/lazysizes.min.js" async></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

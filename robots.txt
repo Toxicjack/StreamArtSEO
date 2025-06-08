@@ -1,0 +1,32 @@
+# StreamArtSEO Robots.txt
+# Version: 0.0.1
+
+User-agent: *
+Allow: /
+
+# Crawl-delay recommendation
+Crawl-delay: 10
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /dashboard/private/
+Disallow: /api/
+
+# Disallow temporary and development files
+Disallow: /temp/
+Disallow: /dev/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /rss.xml
+
+# Folder-specific rules
+Disallow: /images/placeholders/
+Disallow: /css/*.map$
+Disallow: /js/*.map$
+
+# Sitemap location
+Sitemap: https://streamartseo.com/sitemap.xml

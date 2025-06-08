@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>StreamArtSEO - Content Creator Hub</title>
+    <link>https://streamartseo.com</link>
+    <description>Integrate and showcase your content across YouTube, DeviantArt, Twitch, and Reddit with optimized SEO and performance.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 12:00:00 GMT</lastBuildDate>
+    <pubDate>Wed, 01 Jan 2025 12:00:00 GMT</pubDate>
+    <ttl>60</ttl>
+    <atom:link href="https://streamartseo.com/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://streamartseo.com/images/logo.png</url>
+      <title>StreamArtSEO</title>
+      <link>https://streamartseo.com</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    <category>Content Creation</category>
+    <category>YouTube</category>
+    <category>DeviantArt</category>
+    <category>Twitch</category>
+    <category>Reddit</category>
+    <copyright>Copyright 2025, StreamArtSEO. All rights reserved.</copyright>
+    <docs>https://streamartseo.com/rss-info</docs>
+    <managingEditor>editor@streamartseo.com (StreamArtSEO Editor)</managingEditor>
+    <webMaster>webmaster@streamartseo.com (StreamArtSEO Webmaster)</webMaster>
+    
+    <!-- Example YouTube Video Item -->
+    <item>
+      <title>Getting Started with StreamArtSEO - YouTube Integration</title>
+      <link>https://streamartseo.com/videos/getting-started-youtube</link>
+      <guid isPermaLink="true">https://streamartseo.com/videos/getting-started-youtube</guid>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 GMT</pubDate>
+      <description>Learn how to integrate your YouTube channel with StreamArtSEO for maximum visibility and engagement.</description>
+      <content:encoded><![CDATA[<p>In this comprehensive guide, we'll walk you through the process of connecting your YouTube channel to StreamArtSEO.</p><p>You'll learn how to:</p><ul><li>Authenticate with the YouTube API</li><li>Select which content to showcase</li><li>Optimize your video metadata for SEO</li><li>Create custom layouts for your video gallery</li></ul><p>Watch the full tutorial below:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content:encoded>
+      <dc:creator>StreamArtSEO Team</dc:creator>
+      <category>YouTube</category>
+      <category>Tutorials</category>
+      <media:content url="https://www.youtube.com/embed/example" type="video/youtube" expression="full" duration="360">
+        <media:title>Getting Started with StreamArtSEO - YouTube Integration</media:title>
+        <media:description>Learn how to integrate your YouTube channel with StreamArtSEO for maximum visibility and engagement.</media:description>
+        <media:thumbnail url="https://streamartseo.com/images/tutorials/youtube-integration-thumb.jpg" width="480" height="360" />
+        <media:credit>StreamArtSEO</media:credit>
+        <media:rating>nonadult</media:rating>
+      </media:content>
+    </item>
+    
+    <!-- Example DeviantArt Item -->
+    <item>
+      <title>Showcasing Your DeviantArt Gallery</title>
+      <link>https://streamartseo.com/art/deviantart-gallery-guide</link>
+      <guid isPermaLink="true">https://streamartseo.com/art/deviantart-gallery-guide</guid>
+      <pubDate>Wed, 01 Jan 2025 09:30:00 GMT</pubDate>
+      <description>Discover how to beautifully display your DeviantArt creations with StreamArtSEO's gallery features.</description>
+      <content:encoded><![CDATA[<p>Your DeviantArt portfolio deserves to be showcased in the best possible way. With StreamArtSEO, you can create stunning galleries that highlight your artistic talents.</p><p>This guide covers:</p><ul><li>Connecting your DeviantArt account</li><li>Creating custom gallery layouts</li><li>Adding spotlight features for your best work</li><li>Optimizing image metadata for better search visibility</li></ul><p><img src="https://streamartseo.com/images/tutorials/deviantart-gallery-example.jpg" alt="DeviantArt Gallery Example" width="800" height="500" /></p>]]></content:encoded>
+      <dc:creator>StreamArtSEO Team</dc:creator>
+      <category>DeviantArt</category>
+      <category>Art Gallery</category>
+      <media:content url="https://streamartseo.com/images/tutorials/deviantart-gallery-example.jpg" type="image/jpeg" width="800" height="500">
+        <media:title>DeviantArt Gallery Example</media:title>
+        <media:description>Example of a beautifully displayed DeviantArt gallery using StreamArtSEO.</media:description>
+        <media:thumbnail url="https://streamartseo.com/images/tutorials/deviantart-gallery-thumb.jpg" width="300" height="200" />
+        <media:credit>StreamArtSEO</media:credit>
+      </media:content>
+    </item>
+    
+    <!-- Example Twitch Stream Item -->
+    <item>
+      <title>Live Now: Setting Up Twitch Integration</title>
+      <link>https://streamartseo.com/streams/twitch-integration-guide</link>
+      <guid isPermaLink="true">https://streamartseo.com/streams/twitch-integration-guide</guid>
+      <pubDate>Wed, 01 Jan 2025 08:45:00 GMT</pubDate>
+      <description>Join us live as we demonstrate how to set up Twitch integration with StreamArtSEO.</description>
+      <content:encoded><![CDATA[<p>We're streaming live to show you exactly how to connect your Twitch channel to StreamArtSEO!</p><p>In this stream, we'll cover:</p><ul><li>Authenticating with Twitch</li><li>Setting up live status indicators</li><li>Creating a past broadcasts carousel</li><li>Configuring notifications for when you go live</li></ul><p>Join us now:</p><iframe src="https://player.twitch.tv/?channel=streamartseo&parent=streamartseo.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>]]></content:encoded>
+      <dc:creator>StreamArtSEO Team</dc:creator>
+      <category>Twitch</category>
+      <category>Live Streaming</category>
+      <media:content url="https://player.twitch.tv/?channel=streamartseo" type="video/twitch" live="true">
+        <media:title>Live Now: Setting Up Twitch Integration</media:title>
+        <media:description>Join us live as we demonstrate how to set up Twitch integration with StreamArtSEO.</media:description>
+        <media:thumbnail url="https://streamartseo.com/images/tutorials/twitch-integration-thumb.jpg" width="480" height="360" />
+        <media:credit>StreamArtSEO</media:credit>
+        <media:rating>nonadult</media:rating>
+      </media:content>
+    </item>
+    
+    <!-- Example Reddit Integration Item -->
+    <item>
+      <title>Curating Reddit Content with StreamArtSEO</title>
+      <link>https://streamartseo.com/posts/reddit-curation-guide</link>
+      <guid isPermaLink="true">https://streamartseo.com/posts/reddit-curation-guide</guid>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 GMT</pubDate>
+      <description>Learn how to curate and display your Reddit posts and community engagement using StreamArtSEO.</description>
+      <content:encoded><![CDATA[<p>Reddit is a powerful platform for community engagement. With StreamArtSEO, you can showcase your best Reddit content and interactions.</p><p>This guide will teach you:</p><ul><li>How to connect your Reddit account</li><li>Setting up subreddit feeds</li><li>Creating keyword-filtered highlights</li><li>Displaying your most popular posts and comments</li></ul><p><img src="https://streamartseo.com/images/tutorials/reddit-integration-example.jpg" alt="Reddit Integration Example" width="800" height="500" /></p>]]></content:encoded>
+      <dc:creator>StreamArtSEO Team</dc:creator>
+      <category>Reddit</category>
+      <category>Content Curation</category>
+      <media:content url="https://streamartseo.com/images/tutorials/reddit-integration-example.jpg" type="image/jpeg" width="800" height="500">
+        <media:title>Reddit Integration Example</media:title>
+        <media:description>Example of Reddit content curation using StreamArtSEO.</media:description>
+        <media:thumbnail url="https://streamartseo.com/images/tutorials/reddit-integration-thumb.jpg" width="300" height="200" />
+        <media:credit>StreamArtSEO</media:credit>
+      </media:content>
+    </item>
+    
+    <!-- Example SEO Tips Item -->
+    <item>
+      <title>SEO Best Practices for Content Creators</title>
+      <link>https://streamartseo.com/guides/seo-best-practices</link>
+      <guid isPermaLink="true">https://streamartseo.com/guides/seo-best-practices</guid>
+      <pubDate>Tue, 31 Dec 2024 14:00:00 GMT</pubDate>
+      <description>Essential SEO tips and strategies for content creators looking to maximize their visibility across platforms.</description>
+      <content:encoded><![CDATA[<p>As a content creator, understanding SEO is crucial for growing your audience. This comprehensive guide covers everything you need to know about optimizing your content for search engines.</p><p>Key topics include:</p><ul><li>Keyword research for content creators</li><li>Optimizing video titles and descriptions</li><li>Image alt text best practices</li><li>Cross-platform content strategy</li><li>Using structured data effectively</li></ul><p>Start implementing these strategies today to see improved visibility and engagement across all your content platforms!</p>]]></content:encoded>
+      <dc:creator>StreamArtSEO Team</dc:creator>
+      <category>SEO</category>
+      <category>Content Strategy</category>
+    </item>
+  </channel>
+</rss>
